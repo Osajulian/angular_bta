@@ -1,0 +1,33 @@
+<h2>ngFor - plain</h2>
+<ul *ngFor="let course of courses">
+    <li>{{course.name}}</li>
+</ul>
+<!-- The ngFor directive exports a bunch of values that can aid in adding
+features to your displayed data, index, odd/even, etc. See more here - 
+angular.io / search for 'ngForOf' directive, scroll down to 'Local Variables', 
+to find index, first, last, even and odd -->
+
+<h2 class="mt-3">ngFor with index</h2>
+<ul *ngFor="let course of courses; index as i">
+    <li>{{i}} - {{course.name}}</li>
+</ul>
+
+
+<h2 class="mt-3">ngFor with even</h2>
+<ul *ngFor="let course of courses; even as isEven">
+    <li *ngIf = "isEven">{{course.name}}</li>
+</ul>
+
+<h2 class="mt-5">ngFor activates Angular's change detction mechanism</h2>
+<button class="btn btn-primary" (click)="onClickAdd()">Add course</button>
+<ul *ngFor="let  course of courses2">
+    <li>{{course.name}}</li>
+    <button class="btn btn-danger" (click)="onClickRemove(course)">Remove course</button>
+    <button class="btn btn-success ml-2" (click)="onClickUpdate(course)">Update course</button>
+</ul>
+
+<h2 class="mt-3">ngFor with trackBy</h2>
+<ul *ngFor="let course of courses3; trackBy: trackCourse">
+    <li>{{course.name}}</li>
+</ul>
+<button class="btn btn-info" (click)="loadCourses3()">Load Course</button>

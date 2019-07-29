@@ -1,0 +1,33 @@
+<h2>ngIf, then, else, ngTemplate</h2>
+<!-- Angular 2 style using else-->
+<div class="panel panel-default"  *ngIf="angular2Courses.length">
+    List of Angular2 courses
+</div>
+
+<div class="panel panel-default"  *ngIf="!angular2Courses.length">
+    <b>No Angular2 courses yet  - (Angular 2 style using <i>else</i>)</b>
+</div>
+
+<!-- Angular 4+ style using else-->
+<div class="panel panel-default" *ngIf="angular4Courses.length; else noAng4Courses">
+    List of Angular4 courses 
+</div>
+
+<div>
+<ng-template class="panel panel-default"  #noAng4Courses>
+    <b>No Angular4 courses yet - (Angular 4+ style using <i>else</i> and <i>ngTemplate</i>)</b>
+</ng-template>
+</div>
+<!-- using then-->
+
+<div class="panel panel-default" *ngIf="angular5Courses.length; then angular5CoursesList else noAng5Courses"></div>
+ <div>   
+<ng-template class="panel panel-default" #angular5CoursesList>
+        List of Angular5 courses!
+    </ng-template>
+
+    <ng-template class="panel panel-default" #noAng5Courses>
+        <b>No Angular5 courses yet - (Angular 4+ style using <i>else</i>, <i>then</i> and <i>ngTemplate</i>)</b>
+    </ng-template>
+</div>
+    <button class="btn btn-primary mt-3" (click) = "onClearCourses()">Clear courses</button>

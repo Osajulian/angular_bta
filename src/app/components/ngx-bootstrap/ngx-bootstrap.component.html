@@ -1,0 +1,29 @@
+<h2>ngx-Bootstrap</h2>
+<div>
+<button type="button" class="btn btn-primary"
+        [(ngModel)]="singleModel" btnCheckbox
+        btnCheckboxTrue="on" btnCheckboxFalse="off">
+ {{ singleModel }}
+</button>
+</div>
+
+<div class="btn-group mt-2">
+        <label class="btn btn-primary" [(ngModel)]="radioModel"
+               btnRadio="Left" tabindex="0" role="button">Left</label>
+        <label class="btn btn-primary" [(ngModel)]="radioModel"
+               btnRadio="Middle" tabindex="0" role="button">Middle</label>
+        <label class="btn btn-primary" [(ngModel)]="radioModel"
+               btnRadio="Right" tabindex="0" role="button">Right</label>
+      </div>
+
+      <div class="row mt-4">
+            <div class="col-xs-12 col-12 col-md-4 form-group">
+              <input type="text"
+                     placeholder="Datepicker"
+                     class="form-control"
+                     bsDatepicker>
+            </div>
+      </div>
+      <div>
+            <timepicker [(ngModel)]="mytime"></timepicker>
+    </div>
